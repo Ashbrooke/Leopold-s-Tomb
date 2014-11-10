@@ -1,0 +1,33 @@
+Leopold's Tomb
+By Ashbrooke
+
+Preface:
+I'm making this simple text-based game to come to grips with programming in Java. If you have stumbled on this project for some reason please note my newbness and any help/comments are appreciated. ^_^
+
+Description:
+You are an archaeologist that has come across the lost tomb of Leopold Daniau, a legendary shipwright who lived hundreds of years ago. Your goal is to find a way into the main chamber.
+
+Rooms:
+0 - Outside
+1 - Main Hall
+2 - Valve room
+3 - Flood room
+4 - Tomb
+
+Room layout:
+		4
+	2 -	1 - 3
+		0
+		
+
+General Commands:
+'where am i' - returns current location
+'look around' - returns description of current room
+'inventory' - gives inventory
+'exit' - closes the program
+
+
+Basic flow:
+Room 2: Solve puzzle "Most important thing when building a ship" (Blood & Sweat of shipbuilders) to reveal the valve, this turns off the flooding water in room 3
+Room 3: If water has been shut off will reveal a mechanism to unlock room 4
+Room 4: Tomb - Player wins
