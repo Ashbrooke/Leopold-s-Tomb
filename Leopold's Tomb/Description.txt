@@ -21,9 +21,9 @@ Room layout:
 		
 
 General Commands:
-'where am i' - returns current location
-'look around' - returns description of current room
-'inventory' - gives inventory
+1 - Move to next area
+2 - Search room
+3 - Inventory
 'exit' - closes the program
 
 
@@ -31,3 +31,10 @@ Basic flow:
 Room 2: Solve puzzle "Most important thing when building a ship" (Blood & Sweat of shipbuilders) to reveal the valve, this turns off the flooding water in room 3
 Room 3: If water has been shut off will reveal a mechanism to unlock room 4
 Room 4: Tomb - Player wins
+
+LeopoldsTomb States:
+gameState
+0 - valve hidden, water flowing, tomb locked
+1 - valve revealed
+2 - water stopped
+3 - tomb unlocked
