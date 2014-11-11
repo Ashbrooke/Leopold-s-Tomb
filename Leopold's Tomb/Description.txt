@@ -34,7 +34,8 @@ Room 4: Tomb - Player wins
 
 LeopoldsTomb States:
 gameState
-0 - valve hidden, water flowing, tomb locked
-1 - valve revealed
-2 - water stopped
-3 - tomb unlocked
+0 - valve hidden, water flowing, tomb locked, knife not found
+1 - knife found
+2 - valve revealed
+3 - water stopped
+4 - tomb unlocked
