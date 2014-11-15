@@ -8,10 +8,11 @@ public class LeopoldsTomb {
 	String[] rooms = {"Tomb Entrance", "Main Hall", "Altar Room", "Flooded Room", "Tomb"};
 	
 	public LeopoldsTomb(){
-		System.out.println("###########################");
-		System.out.println("##    Leopold's Tomb     ##");
-		System.out.println("--  A game by Ashbrooke  --");
-		System.out.println("---------------------------");
+		System.out.println("######################################################");
+		System.out.println("###############    Leopold's Tomb      ###############");
+		System.out.println("---------------  A game by Ashbrooke   ---------------");
+		System.out.println("------Enter numbers to play, type 'exit' to quit------");
+		
 	}
 	
 	public static int getCurrentRoom(){

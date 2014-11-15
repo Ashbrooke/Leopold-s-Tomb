@@ -5,20 +5,26 @@ public class Main {
 
 	public static void main(String[] args){
 		boolean playerWin = false;
+		boolean showDialog = true;
 		Scanner scannerInput = new Scanner(System.in);
 		LeopoldsTomb GameInstance = new LeopoldsTomb();
 		
 		GameLoop:
 		while(GameInstance.isRunning){
 			
-			System.out.println("You are in the " + GameInstance.getRoom());
-			System.out.println(LeopoldsTomb.getRoomDescription());
+			System.out.println("------------------------------------------------------");
+			System.out.println("> You are in the " + GameInstance.getRoom() + " <");
+			if(showDialog){
+				System.out.println(LeopoldsTomb.getRoomDescription());
+			}
+
 			System.out.println("What would you like to do?");
 			System.out.println("\t 1 - Move to a new room");
 			System.out.println("\t 2 - Search the " + GameInstance.getRoom());
-			System.out.println("\t 3 - Check your inventory");
+			System.out.println("\t 3 - Open your inventory");
 			
 			
+			showDialog = false;
 			String input = scannerInput.nextLine();
 			int nextRoom = 0;
 			
@@ -29,10 +35,10 @@ public class Main {
 				switch (LeopoldsTomb.getCurrentRoom()) {
 		         case 0:  	nextRoom = 1;
 		                  	break;
-		         case 1:  	System.out.println("Which room would you like to enter?");
-		         			System.out.println("1 - Altar Room");
-		         			System.out.println("2 - Flooded Room");
-		         			System.out.println("3 - Tomb");
+		         case 1:  	System.out.println("> Which room would you like to enter? <");
+		         			System.out.println("\t 1 - Altar Room");
+		         			System.out.println("\t 2 - Flooded Room");
+		         			System.out.println("\t 3 - Tomb");
 		         			input = scannerInput.nextLine();
 		         			if(input.equals("1")){
 		         				nextRoom = 2;
@@ -64,7 +70,7 @@ public class Main {
 		                  	break;
 				}
 							
-				
+				showDialog = true;
 				GameInstance.changeRoom(nextRoom);
 			}else if(input.equals("2")){
 				if((LeopoldsTomb.getCurrentRoom() == 1)){
@@ -88,14 +94,18 @@ public class Main {
 					System.out.println("You find nothing usefull.");
 				}
 			}else if(input.equals("3")){
+				System.out.println("------------------------------------------------------");
 				if(LeopoldsTomb.getCurrentRoom() == 2 && LeopoldsTomb.gameState == 1){
 					LeopoldsTomb.gameState = 3;
 					GameInstance.addInventory("Bloody Sacrificial Dagger");
 					System.out.println("You use the dagger to prick your finger. A drop of blood falls onto the altar, representing the hard work that goes into shipbuilding.");
-					System.out.println("A panel above the altar slides away and reveals a large valve. As you turn the valve the rushing sound of water stops.");
+					System.out.println("The tomb rumbles and the rushing sound of water has now stopped.");
 				}else{
-					System.out.println("You look inside of your adventurers bag and see:");
-     				System.out.println(GameInstance.getInventory());
+					
+					System.out.println("> You look inside of your adventurers bag and see: <");
+     				System.out.println("\t" + GameInstance.getInventory());
+     				System.out.println("\n ||| Press 'Enter' to continue |||");
+     				scannerInput.nextLine();
 				}
 			}else{
 				System.out.println("Not a valid command");
